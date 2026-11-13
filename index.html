@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>M Cookie's · Doceria em São Paulo</title>
-<meta name="description" content="M Cookie's — cookies artesanais e recheados em São Paulo. Monte sua caixa, misture os sabores e finalize o pedido pelo Direct do Instagram. Delivery de inauguração em 15/11.">
+<meta name="description" content="M Cookie's — cookies artesanais e recheados em São Paulo. Monte sua caixa, misture os sabores e finalize o pedido pelo Direct do Instagram.">
 <meta name="theme-color" content="#483318">
 <meta property="og:title" content="M Cookie's · Seu novo vício tem nome">
 <meta property="og:description" content="Cookies artesanais e recheados em São Paulo. Monte sua caixa e peça pelo Direct.">
@@ -118,7 +118,7 @@ html[data-ch="instagram"] [data-ch="whatsapp"],html[data-ch="whatsapp"] [data-ch
 .pill__dot{width:8px;height:8px;border-radius:50%;background:#E0A93B;position:relative;flex:none}
 .pill__dot::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1.5px solid #E0A93B;animation:ping 1.8s var(--ease) infinite}
 @keyframes ping{0%{transform:scale(.5);opacity:.9}100%{transform:scale(1.6);opacity:0}}
-.eyebrow{margin:22px 0 10px}
+.eyebrow{margin:0 0 12px}
 .hero__title{font-family:var(--f-display);font-variation-settings:"SOFT" 100,"WONK" 0;font-optical-sizing:auto;font-weight:650;color:var(--ink-2);font-size:clamp(2.9rem,10.5vw,5.9rem);line-height:.98;letter-spacing:-.025em;margin:0}
 .hero__title .script{font-family:var(--f-script);font-weight:400;letter-spacing:0;font-size:1.28em;line-height:.6;color:var(--ink);position:relative;display:inline-block;padding:0 .08em;vertical-align:-.04em}
 .hero__title .script::before{content:"";position:absolute;left:-.05em;right:-.02em;bottom:.02em;height:.32em;background:var(--pink);border-radius:999px;z-index:-1;transform:rotate(-2deg) scaleX(0);transform-origin:left;transition:transform 1s var(--ease) 1.5s}
@@ -236,6 +236,7 @@ main > section{overflow-x:clip}
 .stepper__plus:active{transform:scale(.92)}
 .stepper__minus{width:0;opacity:0;overflow:hidden;color:var(--ink-2)}
 .stepper__val{width:0;opacity:0;text-align:center;font-weight:600;font-variant-numeric:tabular-nums;transition:width .4s var(--ease),opacity .3s;overflow:hidden;color:var(--ink-2)}
+.stepper:not(.on) .stepper__minus,.stepper:not(.on) .stepper__val{visibility:hidden}
 .stepper.on{background:var(--cream-3);box-shadow:inset 0 0 0 1px var(--line)}
 .stepper.on .stepper__minus{width:42px;opacity:1}
 .stepper.on .stepper__minus:hover{background:rgba(107,74,58,.08)}
@@ -248,7 +249,7 @@ main > section{overflow-x:clip}
 /* ---------- KITS ---------- */
 .kits{padding:30px 0 90px}
 .kits__grid{display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr))}
-.kit{position:relative;border-radius:26px;padding:20px 8px 16px;text-align:center;color:var(--ink-2);display:flex;flex-direction:column;align-items:center;transition:transform .5s var(--ease),box-shadow .5s;overflow:hidden;cursor:pointer;border:2px solid transparent}
+.kit{position:relative;border-radius:26px;padding:20px 8px 16px;text-align:center;color:var(--ink-2);display:flex;flex-direction:column;align-items:center;transition:transform .5s var(--ease),box-shadow .5s;cursor:pointer;border:2px solid transparent}
 .kit--pink{background:var(--pink)}
 .kit--yellow{background:var(--yellow)}
 .kit:hover{transform:translateY(-6px);box-shadow:var(--shadow-sm)}
@@ -262,7 +263,7 @@ main > section{overflow-x:clip}
 .slot.filled{border:2px solid var(--cream-2);animation:pop .45s var(--spring)}
 @keyframes pop{0%{transform:scale(.3)}100%{transform:scale(1)}}
 .kit__state{font-size:.7rem;margin:8px 0 0;min-height:1.2em;color:rgba(74,50,38,.8)}
-.kit__check{position:absolute;top:10px;right:10px;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--cream);display:grid;place-items:center;transform:scale(0);transition:transform .45s var(--spring)}
+.kit__check{position:absolute;top:-9px;right:-7px;width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--cream);display:grid;place-items:center;box-shadow:0 0 0 3px var(--cream);transform:scale(0);transition:transform .45s var(--spring);z-index:2}
 .kit__check .icon{width:14px;height:14px;stroke-width:2.6}
 .kit.is-active .kit__check{transform:scale(1)}
 .kits__note{text-align:center;font-size:.86rem;color:var(--ink-soft);margin:22px auto 0;max-width:46ch}
@@ -417,6 +418,8 @@ main > section{overflow-x:clip}
 .field > span,.field legend{font-size:.8rem;font-weight:500;color:var(--ink-2);padding:0}
 .field input,.field textarea{width:100%;font-size:16px;padding:14px 16px;border-radius:16px;border:1.5px solid var(--line-2);background:var(--cream-2);outline:none;transition:border-color .3s,box-shadow .3s;resize:none}
 .field input::placeholder,.field textarea::placeholder{color:rgba(107,74,58,.45)}
+.field input[type="date"]{-webkit-appearance:none;appearance:none;min-height:54px;display:block;text-align:left}
+.field input[type="date"]::-webkit-date-and-time-value{text-align:left}
 .field input:focus,.field textarea:focus{border-color:var(--ink);box-shadow:0 0 0 4px rgba(246,224,138,.55)}
 .field.err input{border-color:#C0533F;animation:shake .4s}
 .field__err{display:none;font-size:.76rem;color:#B5452F}
@@ -452,12 +455,26 @@ main > section{overflow-x:clip}
 .link-btn{font-size:.86rem;color:var(--ink-soft);text-decoration:underline;text-underline-offset:3px;padding:8px}
 
 /* toast + flyer + confetti */
-.toast{position:fixed;left:50%;top:calc(var(--nav-h) + 10px);z-index:90;transform:translate(-50%,-20px);opacity:0;pointer-events:none;padding:11px 18px;border-radius:999px;background:var(--deep);color:var(--cream);font-size:.86rem;box-shadow:var(--shadow-sm);transition:opacity .35s,transform .5s var(--ease);white-space:nowrap;max-width:calc(100% - 24px);overflow:hidden;text-overflow:ellipsis}
+.toast{position:fixed;left:50%;top:calc(var(--nav-h) + 10px);z-index:90;transform:translate(-50%,-20px);opacity:0;pointer-events:none;padding:11px 18px;border-radius:999px;background:var(--deep);color:var(--cream);font-size:.86rem;box-shadow:var(--shadow-sm);transition:opacity .35s,transform .5s var(--ease);width:max-content;max-width:calc(100% - 24px);text-align:center;line-height:1.35}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .flyer{position:fixed;z-index:95;border-radius:50%;object-fit:cover;pointer-events:none;box-shadow:0 10px 20px -8px rgba(58,40,18,.6)}
 .crumb{position:fixed;z-index:96;width:8px;height:8px;border-radius:50%;pointer-events:none}
 
 /* ---------- RESPONSIVE ---------- */
+@media (max-width:379px){
+  .kits__grid{gap:8px}
+  .kit{padding:16px 5px 14px;border-radius:22px}
+  .kit__script{font-size:1.8rem}
+  .kit__size{font-size:1.2rem;white-space:nowrap}
+  .kit__off{font-size:1.85rem}
+  .kit__label{font-size:.68rem}
+  .kit__slots{grid-template-columns:repeat(var(--cols),15px);gap:4px;padding:5px;border-radius:10px}
+  .slot{width:15px;height:15px}
+  .bar__btn{gap:10px}
+  .bar__cta{padding:0 14px}
+  .bar__cta .icon{display:none}
+  .toast{font-size:.8rem}
+}
 @media (min-width:640px){
   .container{width:min(1180px,100% - 64px)}
   .menu-card{padding:42px 34px 28px}
@@ -599,7 +616,6 @@ main > section{overflow-x:clip}
 
   <div class="container hero__grid">
     <div class="hero__copy">
-      <a class="pill h-in" style="--i:1" href="#cardapio" data-scroll><span class="pill__dot"></span><span id="launchText">Delivery de inauguração · 15/11</span></a>
       <p class="caps eyebrow h-in" style="--i:2">Doceria · São Paulo – SP</p>
       <h1 class="hero__title h-in" style="--i:3">Seu novo <span class="script">vício</span><br>tem nome.</h1>
       <p class="hero__lead h-in" style="--i:4">Cookies artesanais, recheados e generosos. Escolha seus sabores, monte sua caixa e o pedido sai prontinho pro <span data-ch="instagram">Direct</span><span data-ch="whatsapp">WhatsApp</span>.</p>
@@ -822,7 +838,7 @@ main > section{overflow-x:clip}
               <label><input type="radio" name="quando" value="asap" checked><span id="asapLabel">O quanto antes</span></label>
               <label><input type="radio" name="quando" value="agendar"><span>Agendar encomenda</span></label>
             </div>
-            <div class="field field__date" id="dateWrap" data-f="data" hidden><input type="date" name="data" aria-label="Data da encomenda"><em class="field__err">Escolha a data da encomenda.</em></div>
+            <div class="field field__date" id="dateWrap" data-f="data" hidden><input type="date" name="data" aria-label="Data da encomenda"><em class="field__err">Escolha uma data a partir de hoje.</em></div>
           </fieldset>
           <label class="field"><span>Observações</span><textarea name="obs" rows="2" placeholder="É presente? Horário preferido? Conta pra gente."></textarea></label>
           <p class="form__note"><svg class="icon"><use href="#i-moto"/></svg><span>Entrega por Uber Moto em São Paulo. O frete é por conta do cliente e é combinado na conversa.</span></p>
@@ -880,7 +896,6 @@ const CONFIG = {
   //  • com número (DDI + DDD + número, só dígitos, ex.: '5511987654321') → o pedido abre pronto no WhatsApp
   whatsapp: '',
   instagramUser: 'm_cookieee',
-  launchDate: '2026-11-15',          // inauguração do delivery
   // Desconto por quantidade de cookies na caixa (misturando sabores)
   tiers: [
     { size: 2, pct: 5 },
@@ -923,9 +938,6 @@ const pad = n => String(n).padStart(2, '0');
 const isoLocal = d => d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
 const parseISO = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
 const today = new Date(); today.setHours(0, 0, 0, 0);
-const launch = parseISO(CONFIG.launchDate);
-const daysToLaunch = Math.round((launch - today) / 864e5);
-const launchShort = pad(launch.getDate()) + '/' + pad(launch.getMonth() + 1);
 
 /* ---------- state ---------- */
 let cart = {};
@@ -1215,7 +1227,12 @@ function goStep(n){
 function openDrawer(){ goStep(1); openOverlay(drawer, '[data-close-drawer].x-btn'); }
 $('#nextBtn').addEventListener('click', () => { if (totals().qty) { goStep(2); setTimeout(() => { const i = $('#orderForm [name=nome]'); if (!i.value && isDesktop()) i.focus(); }, 450); } });
 $('#drawerBack').addEventListener('click', () => goStep(1));
-$$('.js-new-order').forEach(b => b.addEventListener('click', () => { cart = {}; renderAll(); goStep(1); closeOverlay(drawer); scrollToEl($('#cardapio')); }));
+$$('.js-new-order').forEach(b => b.addEventListener('click', () => {
+  cart = {};
+  form.elements.obs.value = ''; form.elements.data.value = '';
+  form.elements.quando.value = 'asap'; $('#dateWrap').hidden = true;
+  renderAll(); goStep(1); closeOverlay(drawer); scrollToEl($('#cardapio'));
+}));
 
 /* ---------- form + whatsapp ---------- */
 const form = $('#orderForm');
@@ -1223,9 +1240,7 @@ const form = $('#orderForm');
   const saved = store.get(FORM_KEY);
   if (saved) for (const k of ['nome', 'endereco', 'complemento']) if (saved[k]) form.elements[k].value = saved[k];
 })();
-const minDate = today > launch ? today : launch;
-form.elements.data.min = isoLocal(minDate);
-$('#asapLabel').textContent = daysToLaunch > 0 ? `Na inauguração (${launchShort})` : 'O quanto antes';
+form.elements.data.min = isoLocal(today);
 
 form.addEventListener('input', e => {
   const f = e.target.closest('.field'); if (f) f.classList.remove('err');
@@ -1245,7 +1260,7 @@ function whenText(){
     const d = parseISO(v);
     return 'Encomenda para ' + d.toLocaleDateString('pt-BR', { weekday: 'long', day: '2-digit', month: '2-digit' });
   }
-  return daysToLaunch > 0 ? `Na inauguração do delivery (${launchShort})` : 'O quanto antes';
+  return 'O quanto antes';
 }
 function buildMessage(){
   const T = totals();
@@ -1282,7 +1297,8 @@ function validate(){
     f.classList.toggle('err', bad); if (bad) { ok = false; first = first || form.elements[k]; }
   }
   if (form.elements.quando.value === 'agendar') {
-    const f = $('[data-f="data"]'); const bad = !form.elements.data.value;
+    const dv = form.elements.data.value;
+    const f = $('[data-f="data"]'); const bad = !dv || dv < isoLocal(new Date());
     f.classList.toggle('err', bad); if (bad) { ok = false; first = first || form.elements.data; }
   }
   if (first) first.focus();
@@ -1382,12 +1398,6 @@ function syncSound(){
 const vio = new IntersectionObserver(([en]) => { if (en.isIntersecting) { const p = video.play(); p && p.catch(() => {}); } else video.pause(); }, { threshold: .15 });
 vio.observe(video);
 
-/* ---------- launch pill ---------- */
-$('#launchText').textContent =
-  daysToLaunch > 1 ? `Delivery de inauguração · ${launchShort} · faltam ${daysToLaunch} dias` :
-  daysToLaunch === 1 ? `Inauguração do delivery é amanhã · ${launchShort}` :
-  daysToLaunch === 0 ? `Hoje é dia de inauguração! · ${launchShort}` :
-  'Delivery aberto em São Paulo';
 $('#year').textContent = new Date().getFullYear();
 
 /* ---------- nav scroll state ---------- */

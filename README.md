@@ -8,6 +8,6 @@ LP-loja da M Cookie's (doceria em São Paulo · @m_cookieee): cardápio interati
 **Configuração** (topo do `<script>` em `index.html`, objeto `CONFIG`):
 - `whatsapp: ''` → pedido é copiado e o cliente cola no Direct da `instagramUser`
 - `whatsapp: '5511999999999'` → pedido abre pronto no WhatsApp
-- `launchDate` e `tiers` (faixas de desconto da caixa)
+- `tiers` (faixas de desconto da caixa)
 
 Desenvolvido por [Avory](https://www.avorybr.com/).
