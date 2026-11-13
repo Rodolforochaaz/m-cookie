@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-ch="instagram">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>M Cookie's · Doceria em São Paulo</title>
-<meta name="description" content="M Cookie's — cookies artesanais e recheados em São Paulo. Monte sua caixa, misture os sabores e finalize o pedido direto no WhatsApp. Delivery de inauguração em 15/11.">
+<meta name="description" content="M Cookie's — cookies artesanais e recheados em São Paulo. Monte sua caixa, misture os sabores e finalize o pedido pelo Direct do Instagram. Delivery de inauguração em 15/11.">
 <meta name="theme-color" content="#483318">
 <meta property="og:title" content="M Cookie's · Seu novo vício tem nome">
-<meta property="og:description" content="Cookies artesanais e recheados em São Paulo. Monte sua caixa e peça pelo WhatsApp.">
+<meta property="og:description" content="Cookies artesanais e recheados em São Paulo. Monte sua caixa e peça pelo Direct.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -49,6 +49,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 input,textarea{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:10px}
 [hidden]{display:none!important}
+html[data-ch="instagram"] [data-ch="whatsapp"],html[data-ch="whatsapp"] [data-ch="instagram"]{display:none!important}
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .container{width:min(1180px,100% - 40px);margin-inline:auto;position:relative;z-index:2}
@@ -439,6 +440,16 @@ main > section{overflow-x:clip}
 .done h3{margin:8px 0 0;font-family:var(--f-display);font-weight:700;font-size:1.7rem;color:var(--ink-2);line-height:1.1}
 .done p{margin:0 0 8px;color:var(--ink-soft);max-width:34ch}
 .done .btn{width:100%;max-width:340px}
+.done__steps{list-style:none;counter-reset:s;margin:2px 0 8px;padding:0;display:grid;gap:10px;text-align:left;width:100%;max-width:340px}
+.done__steps li{counter-increment:s;display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:center;font-size:.88rem;color:var(--ink-soft);line-height:1.4}
+.done__steps li::before{content:counter(s);width:28px;height:28px;border-radius:50%;background:var(--yellow-soft);color:var(--ink-2);font-weight:600;font-size:.8rem;display:grid;place-items:center}
+.done__steps b{color:var(--ink-2);font-weight:600}
+.done__preview{width:100%;max-width:340px;text-align:left;font-size:.82rem}
+.done__preview summary{cursor:pointer;color:var(--ink-2);font-weight:500;padding:6px 0;list-style:none;text-align:center}
+.done__preview summary::-webkit-details-marker{display:none}
+.done__preview textarea{width:100%;margin-top:8px;padding:12px 14px;border-radius:14px;border:1.5px solid var(--line-2);background:var(--cream-2);font-size:.8rem;line-height:1.5;resize:none;color:var(--ink-2)}
+.done.copy-failed .done__icon{background:var(--pink)}
+.link-btn{font-size:.86rem;color:var(--ink-soft);text-decoration:underline;text-underline-offset:3px;padding:8px}
 
 /* toast + flyer + confetti */
 .toast{position:fixed;left:50%;top:calc(var(--nav-h) + 10px);z-index:90;transform:translate(-50%,-20px);opacity:0;pointer-events:none;padding:11px 18px;border-radius:999px;background:var(--deep);color:var(--cream);font-size:.86rem;box-shadow:var(--shadow-sm);transition:opacity .35s,transform .5s var(--ease);white-space:nowrap;max-width:calc(100% - 24px);overflow:hidden;text-overflow:ellipsis}
@@ -522,6 +533,7 @@ main > section{overflow-x:clip}
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
     <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.4 7.5L3.5 20.5l1.4-4.4a8.5 8.5 0 1 1 15.6-4.5Z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01" stroke-width="2.4"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11.5" height="11.5" rx="2.5"/><path d="M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"/></symbol>
     <symbol id="i-at" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.6"/><path d="M15.6 12v1.3a2.6 2.6 0 0 0 5.2 0V12a8.8 8.8 0 1 0-3.4 7"/></symbol>
     <symbol id="i-moto" viewBox="0 0 24 24"><circle cx="5.5" cy="17" r="2.8"/><circle cx="18.5" cy="17" r="2.8"/><path d="M8.3 17h6.2l2.2-6.5H14M16.7 10.5l1.8 6.5M5.5 17l3-6h4.5l1.5 6"/></symbol>
     <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
@@ -590,7 +602,7 @@ main > section{overflow-x:clip}
       <a class="pill h-in" style="--i:1" href="#cardapio" data-scroll><span class="pill__dot"></span><span id="launchText">Delivery de inauguração · 15/11</span></a>
       <p class="caps eyebrow h-in" style="--i:2">Doceria · São Paulo – SP</p>
       <h1 class="hero__title h-in" style="--i:3">Seu novo <span class="script">vício</span><br>tem nome.</h1>
-      <p class="hero__lead h-in" style="--i:4">Cookies artesanais, recheados e generosos. Escolha seus sabores, monte sua caixa e o pedido chega prontinho no WhatsApp.</p>
+      <p class="hero__lead h-in" style="--i:4">Cookies artesanais, recheados e generosos. Escolha seus sabores, monte sua caixa e o pedido sai prontinho pro <span data-ch="instagram">Direct</span><span data-ch="whatsapp">WhatsApp</span>.</p>
       <div class="hero__ctas h-in" style="--i:5">
         <a class="btn btn--primary" href="#cardapio" data-scroll>Montar meu pedido <svg class="icon"><use href="#i-arrow"/></svg></a>
         <a class="btn btn--ghost" href="#kits" data-scroll>Kits com desconto</a>
@@ -673,7 +685,7 @@ main > section{overflow-x:clip}
     </header>
     <div class="how__grid">
       <article class="how-card reveal" style="--d:0ms"><span class="how-card__n">1</span><div class="how-card__icon"><svg class="icon"><use href="#i-cookie"/></svg></div><h3>Escolha os sabores</h3><p>Monte sua caixa misturando o que quiser. A partir de 2 cookies o desconto já entra.</p></article>
-      <article class="how-card reveal" style="--d:100ms"><span class="how-card__n">2</span><div class="how-card__icon"><svg class="icon"><use href="#i-chat"/></svg></div><h3>Finalize no WhatsApp</h3><p>Seu pedido chega pronto na conversa, com sabores, quantidades e o total calculado.</p></article>
+      <article class="how-card reveal" style="--d:100ms"><span class="how-card__n">2</span><div class="how-card__icon"><svg class="icon"><use href="#i-chat"/></svg></div><h3>Finalize no <span data-ch="instagram">Direct</span><span data-ch="whatsapp">WhatsApp</span></h3><p data-ch="instagram">Seu pedido sai copiado prontinho, com sabores, quantidades e total. É só colar no Direct da @m_cookieee e enviar.</p><p data-ch="whatsapp">Seu pedido chega pronto na conversa, com sabores, quantidades e o total calculado.</p></article>
       <article class="how-card reveal" style="--d:200ms"><span class="how-card__n">3</span><div class="how-card__icon"><svg class="icon"><use href="#i-moto"/></svg></div><h3>Receba em casa</h3><p>Entrega por Uber Moto em São Paulo. O frete fica por conta do cliente.</p></article>
     </div>
   </div>
@@ -728,7 +740,8 @@ main > section{overflow-x:clip}
     <div class="footer__col">
       <p class="caps">Pedidos</p>
       <a href="#cardapio" data-scroll><svg class="icon"><use href="#i-cookie"/></svg>Cardápio</a>
-      <a class="js-wa" href="#" target="_blank" rel="noopener"><svg class="icon"><use href="#i-chat"/></svg>WhatsApp</a>
+      <a class="js-wa" data-ch="whatsapp" href="#" target="_blank" rel="noopener"><svg class="icon"><use href="#i-chat"/></svg>WhatsApp</a>
+      <a class="js-dm" data-ch="instagram" href="https://ig.me/m/m_cookieee" target="_blank" rel="noopener"><svg class="icon"><use href="#i-chat"/></svg>Pedir pelo Direct</a>
       <a class="js-ig" href="https://www.instagram.com/m_cookieee/" target="_blank" rel="noopener"><svg class="icon"><use href="#i-at"/></svg>@m_cookieee</a>
     </div>
     <div class="footer__col">
@@ -812,16 +825,31 @@ main > section{overflow-x:clip}
             <div class="field field__date" id="dateWrap" data-f="data" hidden><input type="date" name="data" aria-label="Data da encomenda"><em class="field__err">Escolha a data da encomenda.</em></div>
           </fieldset>
           <label class="field"><span>Observações</span><textarea name="obs" rows="2" placeholder="É presente? Horário preferido? Conta pra gente."></textarea></label>
-          <p class="form__note"><svg class="icon"><use href="#i-moto"/></svg><span>Entrega por Uber Moto em São Paulo. O frete é por conta do cliente e é combinado no WhatsApp.</span></p>
+          <p class="form__note"><svg class="icon"><use href="#i-moto"/></svg><span>Entrega por Uber Moto em São Paulo. O frete é por conta do cliente e é combinado na conversa.</span></p>
+          <p class="form__note" data-ch="instagram"><svg class="icon"><use href="#i-copy"/></svg><span>Ao finalizar, seu pedido é copiado prontinho. Na próxima tela você abre o Direct da @m_cookieee, cola e envia.</span></p>
         </form>
       </section>
       <section class="pane" id="paneDone">
-        <div class="done">
+        <div class="done" data-ch="instagram" id="doneIg">
+          <div class="done__icon"><svg class="icon"><use href="#i-check"/></svg></div>
+          <h3 id="copyTitle">Pedido copiado!</h3>
+          <p id="copyLead">Agora é só colar no Direct da @m_cookieee e enviar.</p>
+          <ol class="done__steps">
+            <li><span><b>Abra o Direct</b> no botão abaixo</span></li>
+            <li><span>Toque e segure no campo de mensagem e escolha <b>Colar</b></span></li>
+            <li><span><b>Envie</b>. A M Cookie's confirma o frete e o pagamento por lá</span></li>
+          </ol>
+          <a class="btn btn--primary js-dm" href="https://ig.me/m/m_cookieee" target="_blank" rel="noopener"><svg class="icon"><use href="#i-at"/></svg>Abrir Direct da @m_cookieee</a>
+          <button class="btn btn--ghost" type="button" id="copyAgain"><svg class="icon"><use href="#i-copy"/></svg>Copiar pedido de novo</button>
+          <details class="done__preview" id="previewWrap"><summary>Ver a mensagem do pedido</summary><textarea id="msgPreview" readonly rows="10" aria-label="Mensagem do pedido"></textarea></details>
+          <button class="link-btn js-new-order" type="button">Fazer um novo pedido</button>
+        </div>
+        <div class="done" data-ch="whatsapp">
           <div class="done__icon"><svg class="icon"><use href="#i-check"/></svg></div>
           <h3>Seu pedido está pronto no WhatsApp!</h3>
           <p>É só tocar em enviar na conversa. A M Cookie's confirma o frete e o pagamento por lá.</p>
           <a class="btn btn--primary" id="waAgain" href="#" target="_blank" rel="noopener"><svg class="icon"><use href="#i-chat"/></svg>Abrir o WhatsApp de novo</a>
-          <button class="btn btn--ghost" type="button" id="newOrder">Fazer um novo pedido</button>
+          <button class="btn btn--ghost js-new-order" type="button">Fazer um novo pedido</button>
         </div>
       </section>
     </div>
@@ -834,6 +862,7 @@ main > section{overflow-x:clip}
       </div>
       <button class="btn btn--primary btn--block" type="button" id="nextBtn">Continuar <svg class="icon"><use href="#i-arrow"/></svg></button>
       <a class="btn btn--primary btn--block" id="sendBtn" href="#" target="_blank" rel="noopener" hidden><svg class="icon"><use href="#i-chat"/></svg>Enviar pedido pelo WhatsApp</a>
+      <button class="btn btn--primary btn--block" type="button" id="copyBtn" hidden><svg class="icon"><use href="#i-copy"/></svg>Finalizar e copiar pedido</button>
     </footer>
   </aside>
 </div>
@@ -846,9 +875,11 @@ main > section{overflow-x:clip}
 
 /* ================= CONFIG — edite aqui ================= */
 const CONFIG = {
-  // Número da M Cookie's no formato DDI + DDD + número, só dígitos. Ex.: 5511987654321
-  whatsapp: '5511900000000',
-  instagram: 'https://www.instagram.com/m_cookieee/',
+  // Canal do pedido:
+  //  • whatsapp vazio ('')  → o pedido é copiado e o cliente cola no Direct do Instagram
+  //  • com número (DDI + DDD + número, só dígitos, ex.: '5511987654321') → o pedido abre pronto no WhatsApp
+  whatsapp: '',
+  instagramUser: 'm_cookieee',
   launchDate: '2026-11-15',          // inauguração do delivery
   // Desconto por quantidade de cookies na caixa (misturando sabores)
   tiers: [
@@ -882,6 +913,10 @@ const store = {
 };
 const CART_KEY = 'mcookie-cart-v1', FORM_KEY = 'mcookie-form-v1';
 const waBase = 'https://wa.me/' + CONFIG.whatsapp.replace(/\D/g, '');
+const CH = CONFIG.whatsapp.replace(/\D/g, '') ? 'whatsapp' : 'instagram';
+document.documentElement.dataset.ch = CH;
+const dmUrl = 'https://ig.me/m/' + CONFIG.instagramUser;
+const B = s => CH === 'whatsapp' ? '*' + s + '*' : s;
 
 /* ---------- dates ---------- */
 const pad = n => String(n).padStart(2, '0');
@@ -1174,12 +1209,13 @@ function goStep(n){
   $('#drawerKicker').textContent = n === 1 ? 'Etapa 1 de 2' : n === 2 ? 'Etapa 2 de 2' : 'Tudo certo';
   $('#drawerTitle').textContent = n === 1 ? 'Sua caixa' : n === 2 ? 'Entrega' : 'Pedido pronto';
   $('#nextBtn').hidden = n !== 1;
-  $('#sendBtn').hidden = n !== 2;
+  $('#sendBtn').hidden = n !== 2 || CH !== 'whatsapp';
+  $('#copyBtn').hidden = n !== 2 || CH !== 'instagram';
 }
 function openDrawer(){ goStep(1); openOverlay(drawer, '[data-close-drawer].x-btn'); }
 $('#nextBtn').addEventListener('click', () => { if (totals().qty) { goStep(2); setTimeout(() => { const i = $('#orderForm [name=nome]'); if (!i.value && isDesktop()) i.focus(); }, 450); } });
 $('#drawerBack').addEventListener('click', () => goStep(1));
-$('#newOrder').addEventListener('click', () => { cart = {}; renderAll(); goStep(1); closeOverlay(drawer); scrollToEl($('#cardapio')); });
+$$('.js-new-order').forEach(b => b.addEventListener('click', () => { cart = {}; renderAll(); goStep(1); closeOverlay(drawer); scrollToEl($('#cardapio')); }));
 
 /* ---------- form + whatsapp ---------- */
 const form = $('#orderForm');
@@ -1222,17 +1258,19 @@ function buildMessage(){
   L.push('');
   L.push(`Subtotal: ${fmt(T.sub)}`);
   if (T.disc) L.push(`Desconto caixa com ${T.tier.size} (${T.pct}%): −${fmt(T.disc)}`);
-  L.push(`*Total: ${fmt(T.total)}*`);
+  L.push(B(`Total: ${fmt(T.total)}`));
   L.push(`(${T.qty} cookie${T.qty > 1 ? 's' : ''} · frete via Uber Moto a combinar)`);
   L.push('');
-  L.push(`*Nome:* ${v('nome')}`);
-  L.push(`*Endereço:* ${v('endereco')}`);
-  if (v('complemento')) L.push(`*Complemento:* ${v('complemento')}`);
-  L.push(`*Quando:* ${whenText()}`);
-  if (v('obs')) L.push(`*Obs.:* ${v('obs')}`);
+  L.push(`${B('Nome:')} ${v('nome')}`);
+  L.push(`${B('Endereço:')} ${v('endereco')}`);
+  if (v('complemento')) L.push(`${B('Complemento:')} ${v('complemento')}`);
+  L.push(`${B('Quando:')} ${whenText()}`);
+  if (v('obs')) L.push(`${B('Obs.:')} ${v('obs')}`);
   return L.join('\n');
 }
 function updateWaLinks(){
+  $$('.js-dm').forEach(a => a.href = dmUrl);
+  if (CH !== 'whatsapp') return;
   const href = waBase + '?text=' + encodeURIComponent(buildMessage());
   $('#sendBtn').href = href; $('#waAgain').href = href;
   $$('.js-wa').forEach(a => a.href = waBase + '?text=' + encodeURIComponent("Olá, M Cookie's! 🍪 Vim pelo site e queria fazer um pedido."));
@@ -1255,6 +1293,43 @@ $('#sendBtn').addEventListener('click', e => {
   updateWaLinks();
   setTimeout(() => goStep(3), 350);
 });
+
+/* ---------- Direct do Instagram: copiar e colar ---------- */
+async function copyText(text){
+  try { if (navigator.clipboard && window.isSecureContext) { await navigator.clipboard.writeText(text); return true; } } catch(e){}
+  try {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none';
+    document.body.appendChild(ta); ta.focus(); ta.select(); ta.setSelectionRange(0, text.length);
+    const ok = document.execCommand('copy'); ta.remove(); return !!ok;
+  } catch(e){ return false; }
+}
+function showCopied(ok){
+  $('#doneIg').classList.toggle('copy-failed', !ok);
+  $('#doneIg .done__icon use').setAttribute('href', ok ? '#i-check' : '#i-copy');
+  $('#copyTitle').textContent = ok ? 'Pedido copiado!' : 'Copie seu pedido';
+  $('#copyLead').textContent = ok
+    ? `Agora é só colar no Direct da @${CONFIG.instagramUser} e enviar.`
+    : `Não deu pra copiar automaticamente. Abra a mensagem abaixo, copie e cole no Direct da @${CONFIG.instagramUser}.`;
+  $('#previewWrap').open = !ok;
+}
+$('#copyBtn').addEventListener('click', async () => {
+  if (!totals().qty || !validate()) return;
+  const msg = buildMessage();
+  $('#msgPreview').value = msg;
+  const ok = await copyText(msg);
+  showCopied(ok);
+  goStep(3);
+});
+$('#copyAgain').addEventListener('click', async () => {
+  const msg = buildMessage();
+  $('#msgPreview').value = msg;
+  const ok = await copyText(msg);
+  showCopied(ok);
+  toast(ok ? 'Pedido copiado ✓' : 'Copie a mensagem do pedido abaixo');
+});
+$('#msgPreview').addEventListener('focus', e => e.target.select());
 
 /* ---------- global clicks ---------- */
 function scrollToEl(el){
