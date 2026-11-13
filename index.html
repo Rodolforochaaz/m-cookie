@@ -975,7 +975,7 @@ const stepperHTML = (p, sm) => `
 $('#menuList').innerHTML = PRODUCTS.map((p, i) => `
   <li class="item reveal" style="--d:${i * 70}ms" data-item="${p.id}">
     <button class="item__hit" type="button" data-open="${p.id}" aria-label="Ver detalhes: ${p.name}"></button>
-    <div class="item__thumb"><img src="${p.img}" alt="Cookie ${p.name}" width="152" height="152" loading="lazy" decoding="async"><span class="item__badge" aria-hidden="true">0</span></div>
+    <div class="item__thumb"><img src="${p.img}" alt="Cookie ${p.name}" width="152" height="152" decoding="async"><span class="item__badge" aria-hidden="true">0</span></div>
     <h3 class="item__name">${p.name}</h3>
     <span class="item__dots" aria-hidden="true"></span>
     <p class="item__price">${fmtShort(p.price)}</p>
